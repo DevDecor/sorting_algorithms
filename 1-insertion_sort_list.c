@@ -17,6 +17,7 @@ void insertion_sort_list(listint_t **list)
 	while (active)
 	{
 		buff = active->next;
+		prev = active->prev;
 		while (prev && prev->n > active->n)
 		{
 			prev->next = active->next;
@@ -36,6 +37,5 @@ void insertion_sort_list(listint_t **list)
 		active = buff;
 		if (!buff)
 			return;
-		prev = active->prev;
 	}
 }
